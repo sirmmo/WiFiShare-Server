@@ -1,0 +1,84 @@
+<html>
+	<head>
+		<title>WiFiSher</title>
+		<link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:300,400,700,400italic' rel='stylesheet' type='text/css'>
+		<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.css" />
+
+		<style>
+			h1,h2,h3,h4,h5,h6, footer, .navbar{
+				font-family: 'Alegreya Sans', sans-serif;
+			}
+			body { padding-top: 50px; }
+			header{
+				width: 100%;
+			}
+			footer {
+				background-color:white;
+				border-top: #e7e7e7 1px solid;
+				width: 100%;
+				text-align: center;
+				position: absolute;
+				bottom: 0;
+			}
+			#map{width:100%;}
+		</style>
+		<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+		<script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js?2"></script>
+		<script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.2.4"></script>
+		<script>
+			function do_resize() {
+				$("#map").height($(window).height()-$('.navbar').height()-1-$('footer').height());
+			}
+			$(window).resize(do_resize);
+			$(function(){
+				do_resize();
+
+				var map = L.map('map').setView([51.505, -0.09], 13);
+				var layer = new L.StamenTileLayer("toner");
+				map.addLayer(layer);
+			});
+		</script>
+	</head>
+	<body>
+		<header>
+			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			  <!-- Brand and toggle get grouped for better mobile display -->
+			  <div class="navbar-header">
+			    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			      <span class="sr-only">Toggle navigation</span>
+			      <span class="icon-bar"></span>
+			      <span class="icon-bar"></span>
+			      <span class="icon-bar"></span>
+			    </button>
+			    <a class="navbar-brand" href="#">WiFiShare</a>
+			  </div>
+
+			  <!-- Collect the nav links, forms, and other content for toggling -->
+			  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			    <form class="navbar-form navbar-left" role="search">
+			      <div class="form-group">
+			        <input type="text" class="form-control" placeholder="Search">
+			      </div>
+			      <button type="submit" class="btn btn-default">&nbsp;<i class="fa fa-search"></i>&nbsp;</button>
+			    </form>
+			    <ul class="nav navbar-nav">
+			    	<li><a href="#" ><i class="fa fa-invert fa-android"></i></a></li>
+			    	<li><a href="#" ><i class="fa fa-invert fa-apple"></i></a></li>
+			    	<li><a href="#" ><i class="fa fa-invert fa-windows"></i></a></li>
+				</ul>
+			  </div><!-- /.navbar-collapse -->
+			  
+			</nav>
+		</header>
+		<section id="map"></section>
+		<footer>&copy; 2013 MMo.IT - Code: 
+			<a href="http://github.com/sirmmo/WiFiShare-Server" title="Server" target="_blank"><i class="fa fa-github"></i></a>
+			<a href="http://github.com/sirmmo/WiFiShare-Server" title="Android Client" target="_blank"><i class="fa fa-github"></i></a>
+			<a href="http://github.com/sirmmo/WiFiShare-Server" title="Windows Client" target="_blank"><i class="fa fa-github"></i></a>
+		</footer>
+
+	</body>
+</html>

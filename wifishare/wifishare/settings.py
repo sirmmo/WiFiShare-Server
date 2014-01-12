@@ -36,6 +36,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'map',
+    'collector', 
+    'locator'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -80,3 +83,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#from local_settings import *
+
+MONGO_SETTINGS = "mongodb://sirmmo:mmommomm0123@dharma.mongohq.com:10082/wifishare"
